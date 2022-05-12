@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>springboot</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>springboot-01-quickstart</module>
+        <module>springboot-02-container</module>
+    </modules>
+
+    <!-- 指定父工程版本，parent 标签类似 java 中的继承，复用依赖，减少冗余配置 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.4.RELEASE</version>
+    </parent>
+
+    <!--
+        dependencyManagement作用
+            只是声明依赖的版本，目的是为了进行依赖版本的统一管理，并不会引入依赖，因此子工程需要引入某个依赖时，需要通过 dependency 引入需要用的依赖：
+                1、如果子工程中没有通过 dependency 引入依赖，那么子工程不会引入依赖；
+                2、如果子工程中已经通过 dependency 引入依赖，那么子工程是会引入依赖，并且
+                    1）如果子工程没有指定依赖的具体版本，那么使用父工程指定的依赖版本；
+                    2）如果子工程已经指定依赖的具体版本，那么使用子工程指定的依赖版本；
+
+        dependencies
+            在父工程中使用 dependencies 指定某些依赖时，即使在子项目中不写该依赖项，那么子项目仍然会从父项目中继承该依赖项（全部继承）
+    -->
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>
