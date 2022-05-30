@@ -5,3 +5,7 @@ cat:
 dog:
   name: xiaogou
   age: 1
+
+fish:
+  name: xiaoyu
+  age: 1
