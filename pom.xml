@@ -12,7 +12,6 @@
 
     <modules>
         <module>springboot-01-quickstart</module>
-        <module>springboot-02-container</module>
         <module>springboot-02-register</module>
     </modules>
 
