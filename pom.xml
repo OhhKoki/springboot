@@ -13,6 +13,7 @@
     <modules>
         <module>springboot-01-quickstart</module>
         <module>springboot-02-register</module>
+        <module>springboot-03-bind</module>
     </modules>
 
     <!-- 指定父工程版本，parent 标签类似 java 中的继承，复用依赖，减少冗余配置 -->
